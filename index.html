@@ -21,31 +21,28 @@
         }
         h1 {
             color: black;
-            font-size: 6vw;
+            font-size: 6vw; /* Escala bem em telas pequenas */
         }
         .buttons {
             margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: flex; /* Usar flex para alinhamento em linha */
+            justify-content: center; /* Centraliza os botões */
+            gap: 20px; /* Espaço entre os botões */
         }
         .button {
             background-color: white;
             border: 2px solid black;
             color: black;
-            padding: 10px 20px;
-            font-size: 4vw;
+            padding: 15px 25px; /* Aumentei o padding para melhorar o ajuste do texto */
+            font-size: 3.5vw; /* Diminuí a fonte dos botões */
             cursor: pointer;
-            margin: 10px;
-            position: relative;
-            width: 100%;
-            max-width: 300px;
+            width: auto; /* Largura automática para acomodar o texto */
+            text-align: center; /* Centraliza o texto no botão */
+            box-sizing: border-box; /* Inclui o padding na largura total */
+            min-width: 100px; /* Largura mínima para os botões */
         }
         .button:hover {
             background-color: #ddd;
-        }
-        #nao {
-            position: absolute;
         }
         #message {
             display: none;
@@ -64,8 +61,9 @@
                 font-size: 8vw;
             }
             .button {
-                font-size: 5vw;
-                padding: 15px 25px;
+                font-size: 4vw; /* Ajuste para telas menores */
+                padding: 15px; /* Mantém o padding consistente */
+                width: auto; /* Deixa a largura automática para telas menores */
             }
             #message {
                 font-size: 6vw;
@@ -102,6 +100,7 @@
     btnNao.addEventListener('mouseover', () => {
         const x = Math.random() * (window.innerWidth - btnNao.offsetWidth);
         const y = Math.random() * (window.innerHeight - btnNao.offsetHeight);
+        btnNao.style.position = 'absolute'; // Mantém a posição apenas durante o movimento
         btnNao.style.left = `${x}px`;
         btnNao.style.top = `${y}px`;
     });
@@ -109,3 +108,4 @@
 
 </body>
 </html>
+ 
